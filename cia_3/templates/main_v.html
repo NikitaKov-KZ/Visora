@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Visora</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Audiowide', cursive;
+    font-size: 120px;
+    opacity: 0.12;
+    background: linear-gradient(90deg, #0ff, #6cf, #0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(0,255,255,0.6), 0 0 80px rgba(0,255,255,0.3);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 1;
+    
+}
+
+/* .parallax-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.layer1 {
+  background: radial-gradient(circle, rgba(14,165,233,0.15) 1px, transparent 1px);
+  background-size: 120px 120px;
+  animation: p1 60s linear infinite;
+}
+
+.layer2 {
+  background: radial-gradient(circle, rgba(14,165,233,0.08) 1px, transparent 1px);
+  background-size: 200px 200px;
+  animation: p2 90s linear infinite reverse;
+}
+
+@keyframes p1 { from{transform:translateY(0)} to{transform:translateY(300px)} }
+@keyframes p2 { from{transform:translateY(0)} to{transform:translateY(500px)} } */
+
+
+
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Audiowide', cursive;
+    font-size: 120px;
+    opacity: 0.12;
+    background: linear-gradient(90deg, #0ff, #6cf, #0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(0,255,255,0.6), 0 0 80px rgba(0,255,255,0.3);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 1;
+    
+}
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+ }  
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0EA5E9;
+  /* color: #006392; */
+  user-select: none;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-family: 'Audiowide', cursive;
+}  
+
+
+.logo-img {
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-links {
+  display: flex;
+  gap: 2em;
+}
+
+.menu-item {
+  color: #0EA5E9;
+  /* color: #0678ae; */
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+}
+
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #1E293B;
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.5);
+
+}
+  
+/* footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  color: #0284C7;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  margin-top: 730px;
+}  
+  */
+
+
+
+body {
+    margin: 0;
+    background: #0a0f14;
+    font-family: 'Inter', sans-serif;
+    color: #e4f7f9;
+    overflow-x: hidden;
+}
+
+/* Сетка на фоне */
+/* body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(34,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+} */
+
+
+/* === PARALLAX BACKGROUND === */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0a0f16, #101820);
+  background-image: 
+    linear-gradient(rgba(14,165,233,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-attachment: fixed;
+  animation: parallaxMove 40s linear infinite;
+}
+
+/* Медленное движение сетки */
+@keyframes parallaxMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
+}
+
+
+/* Шапка */
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.logo {
+    font-family: 'Audiowide';
+    font-size: 56px;
+    background: linear-gradient(90deg,#0ff,#4cf,#0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px #0ff8;
+
+}
+
+.slogan {
+    margin-top: 8px;
+    font-size: 18px;
+    opacity: 0.9;
+    color: #b8e7ec;
+}
+
+/* Карточка преимуществ */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 450px 20px;
+}
+
+.card {
+    background: rgba(0, 25, 30, 0.6);
+    border: 2px solid rgba(80, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    padding: 18px 24px;
+    width: 210px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.12);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #0ff;
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+.card span {
+    font-size: 20px;
+    margin-right: 6px;
+    color: #0ff;
+}
+
+/* Технологии */
+.tech {
+    text-align: center;
+    margin-top: -350px;
+}
+
+
+.tech-title {
+    font-size: 22px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff8;
+    margin-bottom: 12px;
+}
+
+.tech-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0.9;
+}
+
+.tech-item {
+    padding: 8px 18px;
+    border: 1px solid #0ff5;
+    border-radius: 8px;
+    background: rgba(0,255,255,0.04);
+}
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="parallax-layer layer1"></div>
+<div class="parallax-layer layer2"></div>
+
+
+<div class="hero-logo">Visora</div>
+
+  <nav class="top-menu">
+  <div class="menu-container">
+    <div class="logo">
+      <!-- <img src="/static/cai_logo.JPEG" alt="Logo" class="logo-img" /> -->
+     <img src="../static/Visora_logo.png" alt="Logo" class="logo-img" />
+
+
+      <span>Visora </span>
+    </div>
+    <div class="menu-links">
+      <a href="/main_v" class="menu-item">⧈ Visora</a>
+      <a href="/faq" class="menu-item">⚙ FAQ</a>
+      <a href="/analyze" class="menu-item">⟳ История запросов</a>
+      <a href="#" class="menu-item">🗒 Отчеты</a>
+      <a href="/gid" class="menu-item">⧉ Гайд</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<section class="features">
+    <div class="card"><span>◈</span>AI-точность</div>
+    <div class="card"><span>◈</span>Быстрая обработка</div>
+    <div class="card"><span>◈</span>Наглядные результаты</div>
+    <div class="card"><span>◈</span>Доступ из браузера</div>
+</section>
+
+<!-- ТЕХНОЛОГИИ -->
+<section class="tech">
+    <div class="tech-title">Технологии</div>
+    <div class="tech-list">
+        <div class="tech-item">Computer Vision</div>
+        <div class="tech-item">Neural AI</div>
+        <div class="tech-item">Edge Processing</div>
+        <div class="tech-item">Web Interface</div>
+    </div>
+</section>
+</body>
+</html>

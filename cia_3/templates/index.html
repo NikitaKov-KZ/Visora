@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Visora</title>
+  <link rel="stylesheet" href="../static/styles.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;;
+  font-family: 'Inter', sans-serif;
+
+  /* background-color: #F3F1EE;
+  background: #E9EEF3; */
+
+  /* background: linear-gradient(160deg, #1a1a2e, #16213e, #0f3460); */
+
+  /* background: linear-gradient(160deg, #f5f9ff, #dbeafe, #bfdbfe); */
+
+  /* background: linear-gradient(135deg, #f9fbff, #e0f2fe, #dbeafe); */
+
+  /* background: #f3f6fb;
+  box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.4);  */
+
+  /* background: radial-gradient(circle at 30% 30%, #0ea5e9, #0b132b 90%); */
+
+
+ background-color: #F0F9FF; 
+  background-image:
+    linear-gradient(rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px);
+  background-size:
+    40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  background-position: center;
+
+} 
+
+.card {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 550px;
+  border-radius: 16px;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* background: rgba(10, 30, 45, 0.6); */
+  backdrop-filter: blur(12px);
+
+  border: 1.5px solid rgba(0, 255, 255, 0.25);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 255, 0.15),
+    inset 0 0 18px rgba(0, 255, 255, 0.1);
+
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 255, 255, 0.7);
+  box-shadow: 
+    0 0 40px rgba(0, 255, 255, 0.4),
+    inset 0 0 28px rgba(0, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(1.015);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, #0ff, #0ea5e9, #0ff);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+
+
+
+
+button, label.upload-btn {
+  width: 10em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #1E3A8A;
+  color: white;
+  box-shadow: 6px 6px 12px #cfd6dc, -6px -6px 12px #ffffff;
+  transition: color .3s ease;
+}
+
+button::before, label.upload-btn::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0284C7, #14B8A6);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before, label.upload-btn:hover::before {
+  width: 10em;
+}
+
+button:hover, label.upload-btn:hover {
+  color: #F8FAFC;
+  font-weight: 600;
+}
+
+input[type="file"] {
+  display: none;
+}  
+
+
+
+
+
+.container {
+  z-index: 3;
+  position: relative;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 85%;
+  color: #1E293B;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  margin-top: -50px;
+}
+
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0EA5E9;
+  /* color: #006392; */
+  user-select: none;
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Audiowide', cursive; */
+} 
+
+.logo-img {
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-links {
+  display: flex;
+  gap: 2em;
+}
+
+.menu-item {
+  color: #0EA5E9;
+  /* color: #0678ae; */
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+}
+
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #1E293B;
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.5);
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  color: #0284C7;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  margin-top: 730px;
+} 
+  </style>
+
+<body>
+<div class="container"></div>
+
+  <div class="card">
+    <div class="bg"></div>
+    <div class="blob"></div>
+
+    <div class="container">
+      <h1>Visora - искусственное зрение для настоящих машин</h1>
+      <form id="uploadForm">
+        <label for="fileInput" class="upload-btn">⊛ Выбрать фото</label>
+        <input type="file" id="fileInput" name="file" accept="image/*" required>
+        <button type="submit">➤ Анализировать</button>
+      </form>
+      <div id="status"></div>
+      <div id="result"></div>
+    </div>
+  </div>
+
+
+  <nav class="top-menu">
+  <div class="menu-container">
+    <div class="logo">
+      <!-- <img src="/static/cai_logo.JPEG" alt="Logo" class="logo-img" /> -->
+      <img src="../static/Visora_logo.png" alt="Logo" class="logo-img" />
+
+      <span>Visora</span>
+    </div>
+    <div class="menu-links">
+      <a href="/main_v" class="menu-item">⧈ Visora</a>
+
+
+      <a href="/faq" class="menu-item">⚙ FAQ</a>
+      <a href="/analyze" class="menu-item">⟳ История запросов</a>
+      <a href="#" class="menu-item">🗒 Отчеты</a>
+      <a href="/gid" class="menu-item">⧉ Гайд</a>
+    </div>
+  </div>
+</nav>
+
+  <script>
+    const form = document.getElementById("uploadForm");
+    const statusDiv = document.getElementById("status");
+    const resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusDiv.innerHTML = "⎚ Анализируем...";
+      resultDiv.innerHTML = "";
+
+      const fileInput = document.getElementById("fileInput");
+      const file = fileInput.files[0];
+      if (!file) {
+        statusDiv.innerHTML = "⚠ Пожалуйста, выберите фото!";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      try {
+        const response = await fetch("/analyze", { method: "POST", body: formData });
+        if (!response.ok) {
+          statusDiv.innerHTML = "❌ Ошибка сервера: " + response.status;
+          return;
+        }
+
+        const html = await response.text();
+        document.open();
+        document.write(html);
+        document.close();
+      } catch (error) {
+        statusDiv.innerHTML = "⚠ Ошибка запроса: " + error;
+      }
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    menuToggle.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('show');
+    });
+  </script>
+
+<footer>
+    <p> • ❤️ OverFlow </p>
+  </footer>
+
+</head>
+</body>
+</html>

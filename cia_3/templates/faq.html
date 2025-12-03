@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Visora</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;;
+  font-family: 'Inter', sans-serif;
+  
+ background-color: #F0F9FF; 
+  background-image:
+    linear-gradient(rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px);
+  background-size:
+    40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  background-position: center;
+
+} 
+
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0EA5E9;
+  /* color: #006392; */
+  user-select: none;
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Audiowide', cursive; */
+} 
+
+.logo-img {
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-links {
+  display: flex;
+  gap: 2em;
+}
+
+.menu-item {
+  color: #0EA5E9;
+  /* color: #0678ae; */
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+}
+
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #1E293B;
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.5);
+}
+
+
+
+
+        .container {
+            max-width: 900px;
+            margin: 110px auto;
+            padding: -40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: #18181d;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 22px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 22px;
+            font-size: 16px;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 10px 22px 18px;
+            max-height: 600px;
+            opacity: 1;
+        }
+
+        .arrow {
+            transition: 0.3s;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+ <nav class="top-menu">
+  <div class="menu-container">
+    <div class="logo">
+      <!-- <img src="/static/cai_logo.JPEG" alt="Logo" class="logo-img" /> -->
+      <img src="../static/Visora_logo.png" alt="Logo" class="logo-img" />
+
+      <span>Visora</span>
+    </div>
+    <div class="menu-links">
+      <a href="/main_v" class="menu-item">⧈ Visora</a>
+
+
+      <a href="/faq" class="menu-item">⚙ FAQ</a>
+      <a href="/analyze" class="menu-item">⟳ История запросов</a>
+      <a href="#" class="menu-item">🗒 Отчеты</a>
+      <a href="/gid" class="menu-item">⧉ Гайд</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+    <h1>FAQ — ответы на частые вопросы</h1>
+
+    <div class="faq-item">
+        <div class="faq-question">Какие повреждения распознаёт ИИ? <span class="arrow">▼</span></div>
+        <div class="faq-answer">
+            Наша модель анализирует и выделяет основные виды дефектов кузова:<br><br>
+            • Вмятины (dent)<br>
+            • Царапины (scratch)<br>
+            • Сколы и трещины (crack)<br>
+            • Коррозия и ржавчина (rust)<br>
+            • Деформация деталей, повреждения ЛКП<br>
+            • Следы ДТП и механических ударов<br><br>
+            Чем чётче фото — тем точнее результат.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Как повысить точность анализа? <span class="arrow">▼</span></div>
+        <div class="faq-answer">
+            Чтобы ИИ был максимально точен:<br><br>
+            • Используйте качественное освещение<br>
+            • Избегайте бликов и теней<br>
+            • Делайте несколько ракурсов<br>
+            • Снимайте с расстояния 40–150 см<br>
+            • Не используйте сильное размытие или фильтры<br>
+            • Не обрезайте фото слишком сильно
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Какие фото подходят для анализа? <span class="arrow">▼</span></div>
+        <div class="faq-answer">
+            Хороший снимок должен быть:<br><br>
+            ✅ Чётким, без смазанных деталей<br>
+            ✅ Сделанным при хорошем дневном или студийном освещении<br>
+            ✅ Без сильного шума (зёрен) и компрессии<br>
+            ✅ В оригинальном разрешении (желательно 720p+)<br><br>
+            ❌ Тёмные фото<br>
+            ❌ Смазанные кадры<br>
+            ❌ Слишком далёкие или слишком приближенные снимки
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Как правильно фотографировать повреждения? <span class="arrow">▼</span></div>
+        <div class="faq-answer">
+            Используйте простое правило 3 кадров:<br><br>
+            1. Общий план — видно где именно дефект<br>
+            2. Средний план — область повреждения<br>
+            3. Крупный план — текстура дефекта<br><br>
+            Держите камеру перпендикулярно поверхности, чтобы избежать искажений.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Как подготовить фото перед анализом? <span class="arrow">▼</span></div>
+        <div class="faq-answer">
+            Перед загрузкой вы можете:<br><br>
+            • Убрать лишние объекты с кадра<br>
+            • Немного повысить контраст и яркость (если фото темное)<br>
+            • Ориентировать фото вертикально/горизонтально корректно<br><br>
+            ⛔ Не используйте фильтры, стикеры и художественную обработку — это снижает точность.
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.querySelectorAll(".faq-question").forEach(item => {
+        item.addEventListener("click", () => {
+            const parent = item.parentNode;
+            parent.classList.toggle("active");
+        });
+    });
+</script>
+
+</body>
+</html>

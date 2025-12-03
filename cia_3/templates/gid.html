@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гайд | Visora</title>
+<link rel="stylesheet" href="../static/styles.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;;
+  font-family: 'Inter', sans-serif;
+  
+ background-color: #F0F9FF; 
+  background-image:
+    linear-gradient(rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px);
+  background-size:
+    40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  background-position: center;
+
+} 
+
+.guide-container {
+  margin-top: 160px;
+  text-align: center;
+  padding: 30px;
+}
+
+.guide-title {
+  font-family: 'Audiowide', cursive;
+  font-size: 48px;
+  background: linear-gradient(90deg, #0ff, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  
+  text-shadow: 0 0 20px #0ff8, 0 0 40px #0ff5;
+  margin-bottom: 20px;
+  margin-top: -100px;
+}
+
+.guide-sub {
+  font-size: 18px;
+  color: #88dfe6;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.guide {
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: linear-gradient(160deg, #0A0F16, #121B24);
+    padding: 60px 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+
+  .title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #00E5FF, #4D8CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+  }
+
+  .step {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255,255,255,0.05);
+    padding: 24px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
+
+  .step:hover {
+    transform: translateY(-5px);
+    border-color: #4D8CFF;
+  }
+
+  .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: -55px;
+    text-align: center;
+  }
+
+  .use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .case {
+    background: rgba(255,255,255,0.04);
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    margin-top: 100px;
+  }
+
+  .case:hover {
+    border-color: #00E5FF;
+    transform: translateX(4px);
+  }
+
+ .video-frame {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: 1px solid rgba(0,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  padding-top: 50px; 
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 255, 255, 0.25);
+  border-radius: 16px;
+  /* box-shadow:
+    0 0 20px rgba(76, 255, 76, 0.3),
+    inset 0 0 25px rgba(0, 255, 0, 0.1); */
+  overflow: hidden;
+  transition: 0.3s;
+  top:90px;
+}
+
+
+
+
+.subtitle2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: -35px;
+    text-align: center;
+    margin-top: 150px;
+  }
+
+  .use-cases2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .case2 {
+    background: rgba(255,255,255,0.04);
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    margin-top: 100px;
+  }
+
+  .case2:hover {
+    border-color: #00E5FF;
+    transform: translateX(4px);
+  }
+
+
+
+
+
+
+ .video-frame {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: 1px solid rgba(0,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  padding-top: 50px; 
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(76, 255, 243, 0.4);
+  border-radius: 16px;
+  box-shadow:
+    0 0 20px rgba(76, 255, 222, 0.3),
+    inset 0 0 25px rgba(0, 255, 208, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+  top:90px;
+}
+
+.video-placeholder {
+  font-size: 20px;
+  color: rgba(0,255,255,0.6);
+  text-shadow: 0 0 10px #0ff5;
+  font-weight: 500;
+}
+
+.video-frame:hover {
+  border-color: solid rgba(0, 255, 255, 0.25);
+  box-shadow:
+    0 0 35px rgba(76, 255, 237, 0.5),
+    inset 0 0 40px rgba(0, 255, 195, 0.2);
+  } 
+
+.video-frame iframe,
+  .video-frame video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 14px;
+  } 
+
+.back-btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 26px;
+  background: rgba(76, 255, 255, 0.15);
+  border: 1px solid rgba(76, 255, 228, 0.4);
+  color: #4cffd8;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: solid rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 15px #4cffea;
+  transform: translateY(-2px);
+}
+
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0EA5E9;
+  /* color: #006392; */
+  user-select: none;
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Audiowide', cursive; */
+}
+
+.logo-img {
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-links {
+  display: flex;
+  gap: 2em;
+}
+
+.menu-item {
+  color: #0EA5E9;
+  /* color: #0678ae; */
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #1E293B;
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.5);
+}  
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 70px;
+    text-shadow: 0 0 10px #5cff5c;
+  }
+
+  p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 40px;
+  }
+
+</style>
+</head>
+
+<body>
+
+
+
+    <!-- <div class="guide-container">
+  <div class="guide-title">GUIDE</div>
+  <div class="guide-sub">Как работает Nexora — визуальный разбор системы</div>
+
+  <div class="video-frame">
+    <div class="video-placeholder">Видео появится здесь...</div>
+  </div>
+</div> -->
+
+  <nav class="top-menu">
+  <div class="menu-container">
+    <div class="logo">
+      <!-- <img src="/static/cai_logo.JPEG" alt="Logo" class="logo-img" /> -->
+     <img src="../static/Visora_logo.png" alt="Logo" class="logo-img" />
+
+      <span>Visora</span>
+    </div>
+    <div class="menu-links">
+      <a href="/main_v" class="menu-item">⧈ Visora</a>
+
+
+      <a href="/faq" class="menu-item">⚙ FAQ</a>
+      <a href="/analyze" class="menu-item">⟳ История запросов</a>
+      <a href="#" class="menu-item">🗒 Отчеты</a>
+      <a href="/gid" class="menu-item">⧉ Гайд</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<!-- <div class="container">
+    <h1>Видео-гид</h1>
+    <p>Здесь будет обучение по использованию платформы</p> -->
+
+
+<!-- <div class="guide-container">
+  <div class="guide-title">GUIDE</div>
+  <div class="guide-sub">Как работает Visora - визуальный разбор системы</div>
+
+<div class="steps">
+    <div class="step">
+      <div class="icon">📸</div>
+      <p>Загрузите изображение</p>
+    </div>
+    <div class="step">
+      <div class="icon">🧠</div>
+      <p>AI анализирует повреждения</p>
+    </div>
+    <div class="step">
+      <div class="icon">✅</div>
+      <p>Получите результат с разметкой</p>
+    </div>
+  </div>
+
+  <div class="slogan">Visora — когда машина понимает глазами</div>
+
+
+  <h2 class="subtitle">Где это можно использовать?</h2>
+
+  <div class="use-cases">
+    <div class="case">🚗 Автоподбор</div>
+    <div class="case">🛡 Страховая оценка повреждений</div>
+    <div class="case">🔧 Автосервисы и СТО</div>
+    <div class="case">🔍 Осмотр перед покупкой</div>
+    <div class="case">📊 Мониторинг автопарков</div>
+  </div>
+</section>
+
+    <div class="video-frame">
+      <video controls>
+        <source src="your-video.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+
+    </div>
+    <a href="/analyze" class="back-btn">← Назад</a> 
+  </div> -->
+
+
+
+
+  <div class="guide-container">
+
+  <div class="guide-title">GUIDE</div>
+  <div class="guide-sub">Как работает Visora — визуальный разбор системы</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="icon">⤓</div>
+      <p>Загрузите изображение</p>
+    </div>
+    <div class="step">
+      <div class="icon">◎</div>
+      <p>AI анализирует повреждения</p>
+    </div>
+    <div class="step">
+      <div class="icon">◈</div>
+      <p>Получите результат с разметкой</p>
+    </div>
+  </div>
+
+  <!-- <h2 class="subtitle">Как использовать?</h2>
+  <div class="use-cases small">
+    <div class="case">⤓ Загрузите фото</div>
+    <div class="case">◌ Дождитесь анализа</div>
+    <div class="case">▣ Получите AI-разметку</div>
+    <div class="case">⎘ Изучите отчет</div>
+  </div> -->
+
+
+  <div class="video-frame">
+
+    <video controls>
+      <source src="your-video.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+  </div>
+
+
+  <h2 class="subtitle2">Где это можно использовать?</h2>
+
+  <div class="use-cases2">
+    <div class="case2">⏣ Автоподбор</div>
+    <div class="case2">🛡 Страховая оценка повреждений</div>
+    <div class="case2">⚒ Автосервисы и СТО</div>
+    <div class="case2">◔ Осмотр перед покупкой</div>
+    <div class="case2">⌕ Мониторинг автопарков</div>
+  </div>
+
+  <a href="/analyze" class="back-btn">← Назад</a>
+
+</div>
+
+</body>
+</html>
